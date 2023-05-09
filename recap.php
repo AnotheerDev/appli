@@ -50,6 +50,7 @@
                         "<tbody>";
                 // Initialise la variable qui contiendra le total général des produits
                 $totalGeneral = 0;
+                // Initialise la variable qui contiendra le total de produit dans le panier
                 $totalProduct =0; 
                 foreach($_SESSION["products"] as $index => $product){
                     // Affiche les informations de chaque produit
@@ -64,7 +65,7 @@
                             "<td>".number_format($product["total"], 2, ",", "&nbsp;")."&nbsp;€</td>",
                             "<td><a href='traitement.php?action=delete-product&id=$index' class='btn btn-danger btn-sm'>Supprimer</a></td>",
                         "</tr>";
-                        // Ajoute le prix total de chaque produit au total général
+                        // Ajoute le prix total de chaque produit au total général et le total de produit dans le panier
                     $totalGeneral += $product["total"];
                     $totalProduct++;
                 }
@@ -74,7 +75,13 @@
                     "</table>";
             }
         ?>
-
+        <?php
+        if (isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+         // effacer le message après l'avoir affiché
+            unset($_SESSION['message']);
+        }
+        ?>
         <a href="traitement.php?action=empty" class="btn btn-danger" role="button" title="Lien 1">Vider le panier</a>
                         <!-- script à ajouter en fin de body pour faire fonctionner bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
