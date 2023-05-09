@@ -21,6 +21,9 @@
                     }
                 }
                 break;
+            case "delete":
+                $_SESSION["products"] = array(); // Réinitialiser le tableau de produits
+                break;
         }
     }
 
