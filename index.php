@@ -54,7 +54,7 @@ En résumé, session_start() est utilisé pour démarrer une session PHP et $_SE
     
     <div class="container">
         <h1>Ajouter un produit</h1>
-        <form action="traitement.php" method="post">
+        <form action="traitement.php?action=add" method="post">
             <p>
                 <label>
                     Nom du produit :
