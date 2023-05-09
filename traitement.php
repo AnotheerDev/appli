@@ -34,8 +34,9 @@ if (isset($_GET['action'])) {
                     $_SESSION['products'][$id]['qtt']++;
                     $_SESSION['products'][$id]['total'] = $_SESSION['products'][$id]['price'] * $_SESSION['products'][$id]['qtt'];
                 }
+                header("Location:recap.php");
+                exit();
             }
-            header("Location:recap.php");
             break;
         case "down-qtt":
             // Diminuer la quantité d'un produit
@@ -51,8 +52,19 @@ if (isset($_GET['action'])) {
                         $_SESSION['message'] = "La quantité a été mise à jour avec succès !";
                     }
                 }
+                header("Location:recap.php");
+                exit();
             }
-            header("Location:recap.php");
+            break;
+        case "delete-product":
+            if(isset($_GET["action"]) && $_GET["action"] === "delete-product" && isset($_GET["id"])) {
+                // Récupère l'ID du produit à supprimer depuis le formulaire
+                $productId = $_GET["id"];
+                // Supprime le produit de la variable de session "products"
+                unset($_SESSION["products"][$productId]);
+                header("Location: recap.php");
+                exit();
+            }
             break;
     }
 }
@@ -79,4 +91,4 @@ if (isset($_POST['submit'])) {
     }
 }
 
-// header("Location:index.php");
+header("Location:index.php");
