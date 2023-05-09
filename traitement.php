@@ -21,7 +21,7 @@
                     }
                 }
                 break;
-            case "delete":
+            case "empty":
                 // Réinitialiser le tableau de produits
                 unset($_SESSION["products"]);
                 break;
