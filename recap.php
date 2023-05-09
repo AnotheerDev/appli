@@ -49,7 +49,8 @@
                         "</thead>",
                         "<tbody>";
                 // Initialise la variable qui contiendra le total général des produits
-                $totalGeneral = 0; 
+                $totalGeneral = 0;
+                $totalProduct =0; 
                 foreach($_SESSION["products"] as $index => $product){
                     // Affiche les informations de chaque produit
                     echo "<tr>",
@@ -65,12 +66,10 @@
                         "</tr>";
                         // Ajoute le prix total de chaque produit au total général
                     $totalGeneral += $product["total"];
+                    $totalProduct++;
                 }
                 // Affiche le total général de tous les produits
-                echo    "<tr>",
-                            "<td colspan=4>Total général :</td>",
-                            "<td><strong>".number_format($totalGeneral, 2, "&nbsp;")."&nbsp;€</strong></td>",
-                        "</tr>",
+                echo "<tr><td colspan='4'>Nombre de produits: $totalProduct</td><td>Total: ".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</td><td></td></tr>",
                     "</tbody>",
                     "</table>";
             }
