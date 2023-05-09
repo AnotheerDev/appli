@@ -23,7 +23,7 @@
                 break;
             case "delete":
                 // Réinitialiser le tableau de produits
-                $_SESSION["products"] = array();
+                unset($_SESSION["products"]);
                 break;
         }
     }
