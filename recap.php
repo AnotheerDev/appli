@@ -61,6 +61,7 @@
                             .$product["qtt"].
                             "<a href='traitement.php?action=up-qtt&id=$index' class='btn btn-primary btn-sm'>+</a></td>",
                             "<td>".number_format($product["total"], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                            "<td><a href='traitement.php?action=delete-product&id=$index' class='btn btn-danger btn-sm'>Supprimer</a></td>",
                         "</tr>";
                         // Ajoute le prix total de chaque produit au total général
                     $totalGeneral += $product["total"];
