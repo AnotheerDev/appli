@@ -17,6 +17,10 @@
             ];
 
             $_SESSION["products"][] = $product;
+            $_SESSION["message"] = "Le produit a été ajouté avec succès !";
+        }
+        else {
+            $_SESSION["message"] = "Veuillez remplir tous les champs correctement.";
         }
     }
 
