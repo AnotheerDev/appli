@@ -16,6 +16,24 @@ ob_start() active la mise en tampon de sortie (output buffering en anglais) dans
 
 ob_get_clean() récupère le contenu stocké dans le tampon de sortie et le renvoie en tant que chaîne de caractères. Elle supprime également le tampon de sortie et désactive la mise en tampon. Cela signifie que le contenu généré par le script est maintenant envoyé au navigateur ou au client, et que toute manipulation sur la sortie doit être effectuée avant d'appeler ob_get_clean().
 
+
+
+
+simple et efficace:
+
+session_start(): une fonction PHP qui permet à un site web de stocker des informations pour un utilisateur spécifique entre différentes pages du site, en utilisant une session ID unique qui est stockée sur le serveur et envoyée au navigateur de l'utilisateur sous forme de cookie.
+
+$_SESSION : une variable PHP qui stocke les informations de session pour un utilisateur spécifique.
+
+$_POST : une variable PHP qui stocke les données envoyées à un script via la méthode POST, souvent utilisée pour récupérer les données d'un formulaire HTML.
+
+$_GET : une variable PHP qui stocke les données envoyées à un script via la méthode GET, souvent utilisée pour passer des paramètres entre différentes pages ou effectuer des requêtes de recherche.
+
+ob_start() : une fonction PHP qui active la mise en tampon de sortie pour stocker la sortie générée par le script dans un tampon interne de PHP, plutôt que de l'envoyer immédiatement au navigateur.
+
+ob_get_clean() : une fonction PHP qui récupère le contenu stocké dans le tampon de sortie et le renvoie en tant que chaîne de caractères, supprimant également le tampon et désactivant la mise en tampon.
+
+
 -->
 <!-- -->
 <?php
