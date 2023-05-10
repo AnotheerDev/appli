@@ -24,6 +24,7 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="index.php">Home</a>
                     <a class="nav-link" href="recap.php">Récapitulatif</a>
+                    <a class="nav-link" href="uploadPic.php">Photos</a>
                     <a class="nav-link">Mon panier (<?php echo $totalQuantity; ?>)</a>
                 </div>
             </div>
