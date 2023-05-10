@@ -56,4 +56,6 @@ ob_start();
 
 $content = ob_get_clean();
 $title = "Ajout produit";
+$totalQuantity = isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : 0;
 require "template.php";
+require "functions.php";

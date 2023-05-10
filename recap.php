@@ -63,4 +63,6 @@
 
 $content = ob_get_clean();
 $title = "Récapitulatif";
+$totalQuantity = isset($_SESSION['totalQuantity']) ? $_SESSION['totalQuantity'] : 0;
 require "template.php";
+require "functions.php";
