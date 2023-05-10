@@ -62,5 +62,5 @@
 <?php
 
 $content = ob_get_clean();
-$titre = "Récapitulatif";
+$title = "Récapitulatif";
 require "template.php";

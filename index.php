@@ -55,5 +55,5 @@ ob_start();
 <?php
 
 $content = ob_get_clean();
-$titre = "Ajout produit";
+$title = "Ajout produit";
 require "template.php";
