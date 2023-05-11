@@ -30,7 +30,7 @@
             // Affiche les informations de chaque produit
             echo "<tr>",
                     "<td>".$index."</td>",
-                    "<td>".$product["name"]."</td>",
+                    "<td><a href='#' data-bs-toggle='modal' data-bs-target='#productModal".$index."'>".$product["name"]."</a></td>",
                     "<td>".number_format($product["price"], 2, ",", "&nbsp;")."&nbsp;€</td>",
                     "<td>
                     <a href='traitement.php?action=down-qtt&id=$index' class='btn btn-primary btn-sm'>-</a>"
@@ -61,15 +61,15 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id='productModal<?php echo $index; ?>' tabindex="-1" aria-labelledby='productModal<?php echo $index; ?>Label' aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <h5 class="modal-title fs-5" id='productModal<?php echo $index; ?>Label'><?php echo $product["name"]; ?></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            ...
+                <img src="https://media.istockphoto.com/id/1068867234/fr/vectoriel/banan.jpg?s=612x612&w=is&k=20&c=hjgwCtFqknkQUp5LxJ8hnIO2Rb-diEbB5ucUjpIf8pY=">
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
